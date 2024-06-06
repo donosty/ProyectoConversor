@@ -8,11 +8,18 @@ import java.net.http.HttpResponse;
 
 public class Respuesta {
 
+    FormatoJson json = new FormatoJson();
+
     private int peticionCambio;
-    private String deEste;
-    private String aEste;
+    protected String conversion;
+    protected String deEste;
+    protected String aEste;
     private String direccion;
     private String respuesta;
+
+    public Respuesta(){
+
+    }
 
     public void peticion(int peticionCambio){
 
@@ -49,23 +56,26 @@ public class Respuesta {
         }else if (peticionCambio == 5){
 
             String deEste = "USD";
-            String aEste = "COL";
+            String aEste = "CAD";
 
             this.deEste = deEste;
             this.aEste = aEste;
-        }else if (peticionCambio == 6){
+        }else if (peticionCambio == 6) {
 
             String deEste = "COL";
-            String aEste = "USD";
+            String aEste = "CAD";
 
             this.deEste = deEste;
             this.aEste = aEste;
+        } else if(peticionCambio == 7){
+
+            System.out.println("Saliendo del programa...");
         } else {
 
             System.out.println("Colocar un numero valido");
         }
 
-        String direccion = "https://v6.exchangerate-api.com/v6/de868905623042b63a23472a/pair/" + deEste + "/" + aEste;
+        String direccion = "https://v6.exchangerate-api.com/v6/de868905623042b63a23472a/pair/" + this.deEste + "/" + this.aEste;
         this.direccion = direccion;
 
         try {
@@ -89,8 +99,16 @@ public class Respuesta {
         return respuesta;
     }
 
-    public void imprimirRespuesta(){
+    protected Respuesta(Record record){
 
-        System.out.println(respuesta);
+        this.conversion = record.conversion_rate();
+        this.deEste = record.base_code();
+        this.aEste = record.target_code();
     }
+
+    @Override
+    public String toString() {
+        return "La cantidad en " + deEste + "del monto: $" + json.getCantidad() + " convertido en " + aEste + " es de: $" + json.getTotal();
+    }
+
 }
