@@ -1,5 +1,5 @@
 <h1>Conversor de monedas</h1>  
-https://img.shields.io/badge/Terminado-green
+![Static Badge](https://img.shields.io/badge/Terminado-green)
 
 -Conversor de monedas que nos ayudara saber los distintos tipos de cambio en cuanto a la moneda de diversos paises
 
