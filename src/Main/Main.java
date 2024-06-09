@@ -12,7 +12,6 @@ public class Main {
 
             Scanner sc = new Scanner(System.in);
             Respuesta respuesta = new Respuesta();
-            FormatoJson obteniendoJson = new FormatoJson();
 
             int peticionCambio;
             double cantidad;
@@ -39,12 +38,13 @@ public class Main {
                 System.out.print("Digite la cantidad que desea convertir: ");
                 cantidad = sc.nextDouble();
 
+                FormatoJson obteniendoJson = new FormatoJson(respuesta);
                 obteniendoJson.digitarCantidad(cantidad);
 
+                obteniendoJson.mostrarDatos();
 
 
-
-            } while (peticionCambio <1 || peticionCambio >6);
+            } while (peticionCambio >=1 || peticionCambio <=6);
 
     }
 }

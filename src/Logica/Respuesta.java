@@ -8,65 +8,37 @@ import java.net.http.HttpResponse;
 
 public class Respuesta {
 
-    FormatoJson json = new FormatoJson();
-
-    private int peticionCambio;
-    protected String conversion;
     protected String deEste;
     protected String aEste;
     private String direccion;
     private String respuesta;
 
-    public Respuesta(){
-
-    }
-
     public void peticion(int peticionCambio){
-
-        this.peticionCambio = peticionCambio;
 
         if(peticionCambio == 1){
 
-            String deEste = "USD";
-            String aEste = "ARS";
-
-            this.deEste = deEste;
-            this.aEste = aEste;
+            this.deEste = "USD";
+            this.aEste = "ARS";
         } else if (peticionCambio == 2){
 
-            String deEste = "ARS";
-            String aEste = "USD";
-
-            this.deEste = deEste;
-            this.aEste = aEste;
+            this.deEste = "ARS";
+            this.aEste = "USD";
         }else if (peticionCambio == 3){
 
-            String deEste = "USD";
-            String aEste = "BRL";
-
-            this.deEste = deEste;
-            this.aEste = aEste;
+            this.deEste = "USD";
+            this.aEste = "BRL";
         }else if (peticionCambio == 4){
 
-            String deEste = "BRL";
-            String aEste = "USD";
-
-            this.deEste = deEste;
-            this.aEste = aEste;
+            this.deEste = "BRL";
+            this.aEste = "USD";
         }else if (peticionCambio == 5){
 
-            String deEste = "USD";
-            String aEste = "CAD";
-
-            this.deEste = deEste;
-            this.aEste = aEste;
+            this.deEste = "USD";
+            this.aEste = "CAD";
         }else if (peticionCambio == 6) {
 
-            String deEste = "COL";
-            String aEste = "CAD";
-
-            this.deEste = deEste;
-            this.aEste = aEste;
+            this.deEste = "COL";
+            this.aEste = "CAD";
         } else if(peticionCambio == 7){
 
             System.out.println("Saliendo del programa...");
@@ -75,8 +47,7 @@ public class Respuesta {
             System.out.println("Colocar un numero valido");
         }
 
-        String direccion = "https://v6.exchangerate-api.com/v6/de868905623042b63a23472a/pair/" + this.deEste + "/" + this.aEste;
-        this.direccion = direccion;
+        this.direccion = "https://v6.exchangerate-api.com/v6/de868905623042b63a23472a/pair/" + this.deEste + "/" + this.aEste;
 
         try {
 
@@ -99,16 +70,11 @@ public class Respuesta {
         return respuesta;
     }
 
-    protected Respuesta(Record record){
-
-        this.conversion = record.conversion_rate();
-        this.deEste = record.base_code();
-        this.aEste = record.target_code();
+    public String getDeEste() {
+        return deEste;
     }
 
-    @Override
-    public String toString() {
-        return "La cantidad en " + deEste + "del monto: $" + json.getCantidad() + " convertido en " + aEste + " es de: $" + json.getTotal();
+    public String getaEste() {
+        return aEste;
     }
-
 }
