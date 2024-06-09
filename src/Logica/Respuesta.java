@@ -37,14 +37,8 @@ public class Respuesta {
             this.aEste = "CAD";
         }else if (peticionCambio == 6) {
 
-            this.deEste = "COL";
-            this.aEste = "CAD";
-        } else if(peticionCambio == 7){
-
-            System.out.println("Saliendo del programa...");
-        } else {
-
-            System.out.println("Colocar un numero valido");
+            this.deEste = "CAD";
+            this.aEste = "USD";
         }
 
         this.direccion = "https://v6.exchangerate-api.com/v6/de868905623042b63a23472a/pair/" + this.deEste + "/" + this.aEste;
