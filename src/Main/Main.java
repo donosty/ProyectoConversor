@@ -2,8 +2,6 @@ package Main;
 
 import Logica.FormatoJson;
 import Logica.Respuesta;
-
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
