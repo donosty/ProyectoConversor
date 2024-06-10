@@ -19,9 +19,9 @@ public class Main {
                 do {
                     System.out.println("\n***************************************");
                     System.out.println("Digite la conversion que desea hacer");
-                    System.out.println("1. De USD a ARS" + "\n2. De ARS a USD");
-                    System.out.println("3. De USD a BRL" + "\n4. De BRL a USD");
-                    System.out.println("5. De USD a CAD" + "\n6. De CAD a USD");
+                    System.out.println("1. De dolar a peso Argentino" + "\n2. De peso Argentino a dolar");
+                    System.out.println("3. De dolar a real brasileño" + "\n4. De real brasileño a dolar");
+                    System.out.println("5. De dolar a dolar canadiende" + "\n6. De dolar canadiense a dolar");
                     System.out.println("7. SALIR ");
                     System.out.print("Peticion : ");
                     peticionCambio = sc.nextInt();
