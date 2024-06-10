@@ -63,12 +63,4 @@ public class Respuesta {
 
         return respuesta;
     }
-
-    public String getDeEste() {
-        return deEste;
-    }
-
-    public String getaEste() {
-        return aEste;
-    }
 }
